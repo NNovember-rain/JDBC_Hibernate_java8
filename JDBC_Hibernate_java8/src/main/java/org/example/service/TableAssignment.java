@@ -28,6 +28,11 @@ public class TableAssignment implements AssignIMPL {
     }
 
 
+    public TableAssignment() {
+
+    }
+
+
     @Override
     public void inputListDrivers(Scanner sc) {
         System.out.println("\n-Input a list of includes "+numberOfDrivers+" Driver :");

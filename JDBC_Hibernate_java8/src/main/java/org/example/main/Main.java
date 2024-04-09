@@ -1,16 +1,20 @@
 package org.example.main;
 
+import org.example.AssignIMPL;
 import org.example.service.TableAssignment;
 
 import java.util.Scanner;
 
 public class Main {
+    private static AssignIMPL assignIMPL=new TableAssignment();
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter number of Drivers: ");
         int n = Integer.parseInt(sc.nextLine());
         System.out.print("Enter number of Routes : ");
         int m = Integer.parseInt(sc.nextLine());
+        System.out.println(Float.parseFloat("9.8"));
 
 
         TableAssignment tableAssignment=new TableAssignment(n,m);
@@ -33,29 +37,29 @@ public class Main {
                 int choice=Integer.parseInt(sc.nextLine());
                 switch (choice) {
                     case 1:
-                        tableAssignment.inputListDrivers(sc);
-                        tableAssignment.saveDriverInDB();
+                        assignIMPL.inputListDrivers(sc);
+                        assignIMPL.saveDriverInDB();
                         break;
                     case 2:
-                        tableAssignment.inputListRoutes(sc);
-                        tableAssignment.saveRouteInDB();
+                        assignIMPL.inputListRoutes(sc);
+                        assignIMPL.saveRouteInDB();
                         break;
                     case 3:
-                        tableAssignment.assignRouteForDriver(sc);
+                        assignIMPL.assignRouteForDriver(sc);
                         break;
                     case 4:
-                        tableAssignment.sortByName();
-                        tableAssignment.seeDriverStatus();
+                        assignIMPL.sortByName();
+                        assignIMPL.seeDriverStatus();
                         break;
                     case 5:
-                        tableAssignment.sortByNumberRoutes();
-                        tableAssignment.seeDriverStatus();
+                        assignIMPL.sortByNumberRoutes();
+                        assignIMPL.seeDriverStatus();
                         break;
                     case 6:
-                        tableAssignment.statistical();
+                        assignIMPL.statistical();
                         break;
                     case 7:
-                        tableAssignment.seeDriverStatus();
+                        assignIMPL.seeDriverStatus();
                         break;
                     case 8:
                         return;
